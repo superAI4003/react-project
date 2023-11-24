@@ -44,7 +44,7 @@ const PasswordReset = ({
 };
 PasswordReset.propTypes = {
   handleOnchange: PropTypes.func.isRequired,
-  handleOnSubmit: PropTypes.func.isRequired,
+  handleOnResetSubmit: PropTypes.func.isRequired,
   formSwitcher: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
 };
