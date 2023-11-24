@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col, Form, FormGroup, Button } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
 const LoginForm = ({
   handleOnchange,
   handleOnSubmit,

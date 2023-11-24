@@ -3,7 +3,24 @@
     "id": 1,
     "subject": "nice to meet you",
     "status": "client respnse pending",
-    "addedAt": "2020-09-08"
+    "addedAt": "2020-09-08",
+    "history": [
+      {
+        "date": "20-10-10",
+        "message": "sjdjkfjk",
+        "messageby": "client"
+      },
+      {
+        "date": "20-10-10",
+        "message": "sjdjkfjk",
+        "messageby": "client2"
+      },
+      {
+        "date": "20-10-10",
+        "message": "sjdjkfjk",
+        "messageby": "clien3t"
+      }
+    ]
   },
   {
     "id": 2,
