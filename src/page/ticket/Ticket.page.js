@@ -4,12 +4,21 @@ import Breadcumb from "../../components/breadcumb/Breadcumb.comp";
 import tickets from "../../assets/data/dummy-tickets.json";
 import MessageHistory from "../../components/message-history/MessageHistory.comp";
 import UpdateTicket from "../../components/update-ticket/UpdateTicket.comp";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const ticket = tickets[0];
 const Ticket = () => {
+  const { tId } = useParams();
   const [message, setMessage] = useState("");
-
-  useEffect(() => {}, [message]);
+  const [ticket, setTicket] = useState("");
+  useEffect(() => {
+    for (let i = 0; i < tickets.length; i++) {
+      if (tickets[i].id == tId) {
+        setTicket(tickets[i]);
+        continue;
+      }
+    }
+  }, [message, tId]);
   const handleOnChange = (e) => {
     e.preventDefault();
     const { message } = e.target;
@@ -25,6 +34,8 @@ const Ticket = () => {
       </Row>
       <Row>
         <Col className="text-weight-bolder text-secondary">
+          <div className="subject">Subject:{ticket.id}</div>
+
           <div className="subject">Subject:{ticket.subject}</div>
           <div className="date">IssueDate:{ticket.addedAt}</div>
           <div className="status">Status:{ticket.status}</div>
@@ -34,9 +45,7 @@ const Ticket = () => {
         </Col>
       </Row>
       <Row className="mt-4">
-        <Col>
-          <MessageHistory msg={ticket.history} />
-        </Col>
+        <Col>{ticket.history && <MessageHistory msg={ticket.history} />}</Col>
       </Row>
       <hr />
       <Row className="mt-4">
